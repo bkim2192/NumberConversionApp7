@@ -14,7 +14,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
     @IBOutlet weak var toPicker: UIPickerView!
     @IBOutlet weak var numberTextField: UITextField!
     @IBOutlet weak var outputLabel: UILabel!
-    
+    //2
     var conversionLabels = ["Binary","Decimal","Hexidecimal"]
     var convertFrom = "Binary"
     var convertTo = "Binary"
