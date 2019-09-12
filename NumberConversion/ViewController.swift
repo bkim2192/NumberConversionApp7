@@ -140,7 +140,27 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
 
     //Stretch #2
     func conversionOfDecimalToHexidecimal(number: String) -> String  {
-        return ""
+        
+        var N = Int(number)!
+               var array:[String] = []
+               var remainder = 0
+               var returnValue:String = ""
+            var NN = Double(N)
+               while NN > 15 {
+                    
+                remainder = Int(NN) % 16 // 6
+                   NN = NN / 16 // 9
+                //    N rounded down
+                var bob = Int(NN)
+                   array.append("\(remainder)")
+                array.append("\(bob)")
+               }
+               
+               for numbers in array.reversed() {
+                   returnValue += "\(numbers)"
+               }
+               return returnValue
+        
     }
     
     //Stretch #3
