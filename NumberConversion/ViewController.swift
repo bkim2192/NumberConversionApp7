@@ -122,7 +122,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
             var power2 = NSDecimalNumber(decimal: power)
             var term = Int(String(element))!
             if term > 1 {
-                print("not a binary number")
+                
                 return "not a binary number"
             }
             var fs = term * Int(power2)
