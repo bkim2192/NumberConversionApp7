@@ -142,24 +142,74 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
     func conversionOfDecimalToHexidecimal(number: String) -> String  {
         
         var N = Int(number)!
-               var array:[String] = []
-               var remainder = 0
-               var returnValue:String = ""
-            var NN = Double(N)
-               while NN > 15 {
+                  var array:[String] = []
+                  var remainder = 0
+                  var returnValue:String = ""
+               var NN = Double(N)
+                  while NN > 15 {
+                   remainder = Int(NN) % 16 // 6
+                   
+                      NN = NN / 16 // 9
+                   //    N rounded down
+                   var bob = Int(NN)
+                   var bob2 = String(bob)
+                    var remainder2 = String(remainder)
+                    if remainder == 10 {
+                        remainder2 = "A"
+                    }
+                    if remainder == 11 {
+                        remainder2 = "B"
+                    }
+                    if remainder == 12 {
+                        remainder2 = "C"
+                    }
+                    if remainder == 13 {
+                        remainder2 = "D"
+                    }
+                    if remainder == 14 {
+                        remainder2 = "E"
+                    }
+                    if remainder == 15 {
+                        remainder2 = "F"
+                    }
                     
-                remainder = Int(NN) % 16 // 6
-                   NN = NN / 16 // 9
-                //    N rounded down
-                var bob = Int(NN)
-                   array.append("\(remainder)")
-                array.append("\(bob)")
-               }
-               
-               for numbers in array.reversed() {
-                   returnValue += "\(numbers)"
-               }
-               return returnValue
+                   if bob == 10 {
+                       
+                       bob2 = "A"
+                   }
+                   if bob == 11 {
+                       
+                       bob2 = "B"
+                   }
+                   if bob == 12 {
+                    
+                       bob2 = "C"
+                   }
+                   if bob == 13 {
+                       
+                       bob2 = "D"
+                   }
+                   if bob == 14 {
+                       
+                       bob2 = "E"
+                   }
+                   if bob == 15 {
+                       
+                       bob2 = "F"
+                   }
+                    if remainder < 16 {
+                        array.append("\(remainder2)")
+                        
+                    }
+                    if bob < 16 {
+                        array.append("\(bob2)")
+
+                    }
+                  }
+                  for numbers in array.reversed() {
+                      returnValue += "\(numbers)"
+                  }
+                    return returnValue
       //hi
     }
     
