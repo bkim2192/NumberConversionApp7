@@ -215,6 +215,38 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
     
     //Stretch #3
     func conversionOfHexidecimalToDecimal(number: String) -> String  {
+        
+        var number1 = number
+        
+              var indexNumber = 0
+              var array = Array(number)
+              var endArray:[String] = []
+              var endAnswer:Int = 0
+              for element in array.reversed() {
+                  var power = (pow(2, indexNumber))
+                  var power2 = NSDecimalNumber(decimal: power)
+                  var term = Int(String(element))!
+//                  if term > 1 {
+//
+//                      return "not a binary number"
+//                  }
+                  var fs = term * Int(power2)
+                  indexNumber += 1
+                  if fs > 0 {
+                      endArray.append("\(fs)")
+                  }
+              }
+              for cat in endArray {
+                  endAnswer += Int(cat)!
+              }
+              
+              return String(endAnswer)
+        
+        
+        
+        
+        
+        
         return ""
     }
 
